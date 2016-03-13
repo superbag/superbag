@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'superbag',
         'USER': 'django',
-        'PASSWORD': 'ABMfn1qu57',
+        'PASSWORD': 'VhlrFQ12y4',
         'HOST': '127.0.0.1',
         'PORT': '5432',
         'DEFAULT_CHARSET': 'utf-8'

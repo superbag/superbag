@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load main_filters %}
+{% load staticfiles %}
 
 {% block scripts_base %}
     {{ block.super }}
@@ -22,7 +23,7 @@
         <div id="alert-form" class="alert alert-success text-center" role="alert"><h3>Дякуємо за ваше звернення, наш співробітник зв'яжеться із вами найближчим часом</h3></div>
 
 		<div class='col-centered col-xs-12 col-md-8'>
-		{{ text |safe}}
+            <h2>Шановний клієнт, якщо у Вас стався страховий випадок із багажем Ви маєте:</h2></div>        <ul>            <li>                1) Звернутися до представників адміністрації аеропорту (відділення «Lost & Found») та скласти Акт про пошкодження або зникнення багажу.             </li>           <li>                2) Якщо відбулося пошкодження або відкриття із крадіжкою частини багажу - обов'язково зафіксувати пошкодження на фото або відео.            </li>           <li>                3) Повідомити нам про подію Ви можете одним із способів:                <ul>                    <li>                    • заповнивши форму повідомлення                         <span id="req-from-but" class="label label-info">ТУТ</span>                     </li>                   <li>                        • листом з описом події на адресу електронної пошти  <a href="mailto:superbag@zlagoda.ua">superbag@zlagoda.ua</a>;                  </li>                     <li>                         • відправивши смс с текстом "SOS xxxxxx" на номер +38 050 477 89 89, де хххххх - унікальний номер Вашого страхування                     </li>               </ul>           </li>           <li>                {% load staticfiles %}              4) Не пізніше 30 днів Вам необхідно надати Заяву на виплату, яку Ви можете завантажити <a href="{% static 'file/form.doc'%}"<span class="label label-info">ТУТ</span></a> або заповнити безпосередньо в офісі страхової компанії, зібравши всі необхідні документи. Перелік документів, необхідних для здійснення виплати, Ви можете побачити в пам'ятці, виданої при страхуванні або ознайомитися з ними на сайті компанії.            </li>       </ul>
 
     <div class="modal fade bs-example-modal-lg" id="ReqModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">

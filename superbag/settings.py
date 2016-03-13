@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'superbag.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'superbag',
+        'NAME': 'django',
         'USER': 'django',
         'PASSWORD': 'VhlrFQ12y4',
         'HOST': '127.0.0.1',

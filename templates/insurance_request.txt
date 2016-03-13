@@ -1,0 +1,26 @@
+Заявитель:
+{{ author }}
+
+Телефон:
+{{ phone }}
+
+Электронный адрес:
+{{ email }}
+
+Аэропорт вылета:
+{{ airport_arrival }}
+
+Аэропорт прибытия:
+{{ airport_destination }}
+
+Номер полиса:
+{{ ticket_num }}
+
+Дата вылета:
+{{ event_date }}
+
+Описание:
+{{ description }}
+
+Инфо:
+{{ info }}

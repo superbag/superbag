@@ -1,0 +1,51 @@
+$number1: -0px -0px 216px 216px;
+$number2: -0px -216px 216px 216px;
+$number3: -0px -432px 216px 216px;
+$number4: -0px -648px 216px 216px;
+$part42: -0px -864px 1208px 908px;
+$part43: -0px -1772px 1208px 908px;
+$part44: -0px -2680px 1208px 908px;
+$zlagoda: -0px -3588px 1467px 1050px;
+$icon2: -0px -4638px 1258px 1258px;
+$icon3: -0px -5896px 1258px 1258px;
+$part41: -0px -7154px 1258px 1258px;
+$sm_icons-icon7: -0px -8412px 1258px 1258px;
+$icon4: -0px -9670px 1258px 1258px;
+$sm_icons-icon8: -0px -10928px 1258px 1258px;
+$icon1: -0px -12186px 1258px 1258px;
+$sm_icons-icon1: -0px -13444px 1258px 1258px;
+$sm_icons-icon2: -0px -14702px 1258px 1258px;
+$sm_icons-icon3: -0px -15960px 1258px 1258px;
+$sm_icons-icon4: -0px -17218px 1258px 1258px;
+$sm_icons-icon5: -0px -18476px 1258px 1258px;
+$sm_icons-icon6: -0px -19734px 1258px 1258px;
+$guybag1: -0px -20992px 1408px 2208px;
+$\35slidebag: -0px -23200px 2299px 2716px;
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 3);
+}
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 4);
+}
+@function sprite-width($sprite) {
+  @return nth($sprite, 3);
+}
+@function sprite-height($sprite) {
+  @return nth($sprite, 4);
+}
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 1);
+  $sprite-offset-y: nth($sprite, 2);
+  background-position: $sprite-offset-x $sprite-offset-y;
+}
+@mixin sprite($sprite, $display: block) {
+  @include sprite-position($sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: $display;
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+.icon {
+  background-image: url("../images/sprite.png");
+}

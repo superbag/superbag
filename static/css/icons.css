@@ -1,0 +1,59 @@
+@font-face {
+	font-family: "Flaticon";
+	src: url("flaticon.eot");
+	src: url("flaticon.eot#iefix") format("embedded-opentype"),
+	url("flaticon.woff") format("woff"),
+	url("flaticon.ttf") format("truetype"),
+	url("flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*@media (min-width: 600px) and (max-width: 1400px) {
+	[class^="flaticon-"]:after, [class*=" flaticon-"]:after { 
+		font-size: 22px;
+	}
+}*/
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+        font-size: 72px;
+        color: #3B578C;
+font-style: normal;
+text-align: center;
+margin-left: 0.3em;
+margin-right: 0.3em;
+
+
+}.flaticon-airplane68:before {
+	content: "\e000";
+}
+.flaticon-bag30:before {
+	content: "\e001";
+}
+.flaticon-home73:before {
+	content: "\e002";
+}
+.flaticon-hotel:before {
+	content: "\e003";
+}
+.flaticon-plane7:before {
+	content: "\e004";
+}
+.flaticon-sleeping12:before {
+	content: "\e005";
+}
+.flaticon-suitcase74:before {
+	content: "\e006";
+}
+.flaticon-train4:before {
+	content: "\e007";
+}
+
+@media (min-width: 280px) and (max-width: 800px) {
+	[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+	[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+        font-size: 12px;
+    }
+}

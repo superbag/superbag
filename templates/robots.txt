@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /static/js/*
+
+Sitemap: https://superbag.com.ua/sitemap.xml

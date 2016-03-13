@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load main_filters %}
+
+{% block scripts_base %}
+    {{ block.super }}
+    <script type="text/javascript" src="{{STATIC_URL}}js/bootstrap-datepicker.js"></script>
+{% endblock %}
+
+{% block styles %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/datepicker.css" />
+{% endblock %}
+
+{% block content %}
+    <ul id="menu">
+        <a class="pull-left" href="{% url 'indexru' %}">
+            <img src="/static/image/superlogo.svg">
+        </a>
+    </ul>
+
+    <div id="lost_baggage"class='container m-t-150'>
+        <div id="alert-form" class="alert alert-success text-center" role="alert"><h4>Спасибо за обращение, наш сотрудник свяжется с Вами в ближайшее время</h4></div>
+
+        <div class='col-centered col-xs-12 col-md-8'>
+            {{ text |safe}}
+
+    <div class="modal fade bs-example-modal-lg" id="ReqModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                	<button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Укажите Ваши данные</h4>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+	                    {% csrf_token %}
+                        <dl class="dl-horizontal">
+                            <dt> ФИО </dt>
+                            <dd>
+                                {{ form.author }}
+                            </dd>
+                            <dt value="Номер телефона(с номером оператора города)">
+                                Номер телефона(с номером оператора или города)
+                            </dt>
+                            <dd> {{ form.phone }}</dd>
+                            <dt id="email-label">
+                                Email
+                            </dt>
+                            <dd> {{ form.email }}</dd>
+                            <dt>
+                                Аэропорт вылета
+                            </dt>
+                            <dd> {{ form.airport_arrival }}</dd>
+                            <dt>
+                                Аэропорт прибытия
+                            </dt>
+                            <dd> {{ form.airport_destination }}</dd>
+                            <dt>
+                                Номер страхового талона
+                            </dt>
+                            <dd> {{ form.ticket_num }}</dd>
+                            <dt>
+                                Дата полета
+                            </dt>
+                            <dd> {{ form.event_date }}</dd>
+                            <dt>
+                                Краткое описание события
+                            </dt>
+                            <dd> {{ form.description }}</dd>
+                            <dt>
+                                Дополнительная ииформация
+                            </dt>
+	                        <dd> 
+	                        	<textarea id="id_info" class="form-control" type="text" name="info" maxlength="2056"> </textarea>
+	                        </dd>
+                        </dl>
+                    </form>
+                </div>
+                <div class="modal-footer">
+	               	<button id="req-save" class="btn btn-success"> Отправить</button>
+	            </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

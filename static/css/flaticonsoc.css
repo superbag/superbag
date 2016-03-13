@@ -1,0 +1,33 @@
+@font-face {
+	font-family: "Flaticon";
+	src: url("flaticonsocial.eot");
+	src: url("flaticonsocial.eot#iefix") format("embedded-opentype"),
+	url("flaticonsocial.woff") format("woff"),
+	url("flaticonsocial.ttf") format("truetype"),
+	url("flaticonsocial.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+        font-size: 46px;
+        color: #E42C52;
+font-style: normal;
+margin-left: 20px;
+}.flaticon-facebook29:before {
+	content: "\e000";
+}
+.flaticon-photos12:before {
+	content: "\e001";
+}
+.flaticon-twitter2:before {
+	content: "\e002";
+}
+
+@media (min-width: 280px) and (max-width: 374px) {
+	[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+	[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+
+{% block scripts_base %}
+    {{ block.super }}
+    <script type="text/javascript" src="{{STATIC_URL}}bower_components/fullpage/jquery.fullPage.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() { 
+			$('#fullpage').fullpage({
+				anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage', 'lastPage'],
+                sectionsColor : ['#C4F0FF', '#E42C52', '#265780', '#DEDEDE', '#DEDEDE'],
+				menu: '#menu',
+                navigation: true,
+                navigationPosition: 'left',
+				scrollingSpeed: 500,
+                css3: false,
+                // resize: true,
+                // responsiveWidth: 900,
+                // responsiveHeight: 900,
+                // verticalCentered: false,
+			});
+		});
+	</script>
+{% endblock %}
+{% block content %}
+
+
+<ul id="menu">
+    <li class='pull-left lang'><a href="{% url 'indexua' %}">Ua</a></li>
+    <li class='pull-left lang'><a href="{% url 'ru_lost_baggage' %}"> Страховой случай</a></li>
+    <img src="/static/image/superlogo.svg">
+    <li data-menuanchor="5thpage"><a href="#5thpage">Страхование</a></li>
+    <li data-menuanchor="4thpage"><a href="#4thpage">Активация</a></li>
+    <li data-menuanchor="3rdPage"><a href="#3rdPage">Использование</a></li>
+    <li data-menuanchor="secondPage"><a href="#secondPage">Суперзащита</a></li>
+    <li data-menuanchor="firstPage"><a href="#firstPage">SUPERBAG</a></li>
+    <!-- <li data-menuanchor="5thpage"><a href="#5thpage">Когда использовать</a></li>
+--> </ul>
+
+
+<div id="fullpage">
+	<div class="section" id="section0">
+        <div class="wrapper">
+            <div class="title-box">
+                <h1> <span>{{ fields|get_item:'Slide 1 title' |safe}}</span></h1>
+                    <p class="main-text"> {{ fields|get_item:'Slide 1 text' |safe}}</p>
+            </div>
+        </div>
+	</div>
+
+	<div class="section" id="section1">
+		<div class="wrapper">
+            <div class="sec1-head">
+                <h1> {{ fields|get_item:'Slide 2 title' |safe}} </h1>
+                <p> {{ fields|get_item:'Slide 2 text' |safe}}
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <img src="/static/image/icon1.png">
+                     <p>{{ fields|get_item:'Slide 2 item 1' |safe}}</p>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <img src="/static/image/icon2.png">
+                     <p>{{ fields|get_item:'Slide 2 item 2' |safe}}</p>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <img src="/static/image/icon3.png">
+                     <p>{{ fields|get_item:'Slide 2 item 3' |safe}}</p>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-3">
+                    <img src="/static/image/icon4.png">
+                     <p>{{ fields|get_item:'Slide 2 item 4' |safe}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+       
+    <div class="section" id="section2">
+        <div class="wrapper">
+            <div class="sec2-head">
+                <h1> {{ fields|get_item:'Slide 3 title' |safe}}</h1> 
+                <p>{{ fields|get_item:'Slide 3 text' |safe}}</p> 
+            </div>
+
+            <div class="sec2-body row">
+                <div class="activation col-xs-5 col-md-4">
+                    <div class="s-2-b-head">
+                        <h1>Активируйте суперзащиту в случае</h1>
+                    </div>
+                    <table>
+                        <tr>
+                            <td> <img src="static/image/sm_icons/icon1.png"></td>
+                            <td> путешествия </td>
+                        </tr>
+                        <tr>   
+                            <td> <img src="static/image/sm_icons/icon2.png"></td>
+                            <td> обратного пути домой</td>
+                        </tr>
+                        <tr>
+                            <td> <img src="static/image/sm_icons/icon3.png"></td>
+                            <td> когда оставляете вещи без присмотра </td>
+                        </tr>
+                        <tr>
+                            <td> <img src="static/image/sm_icons/icon4.png"></td>
+                            <td> когда сдаете багаж в камеру хранения </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="guybag col-xs-3 col-md-3">
+                    <img class="guybag-img" src="/static/image/guybag1.png">
+                </div>
+                <div class="places col-xs-5 col-md-4">
+                    <div class="s-2-b-head">
+                        <h1> Используйте самостятельно</h1>
+                    </div>
+                    <table>
+                        <tr>
+                            <td> дома </td>
+                            <td> <img src="static/image/sm_icons/icon5.png"></td>
+                        </tr>
+                        <tr>   
+                            <td>в отеле</td>
+                            <td> <img src="static/image/sm_icons/icon6.png"></td>
+                        </tr>
+                        <tr>
+                            <td>в аэропорту</td>
+                            <td> <img src="static/image/sm_icons/icon7.png"></td>
+                        </tr>
+                        <tr>
+                            <td>на вокзале</td>
+                            <td> <img src="static/image/sm_icons/icon8.png"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+		</div>
+	</div>
+    <div class="section" id="section3">
+        <div class="wrapper">
+            <div class="sec3-head">
+                <h1> {{ fields|get_item:'Slide 4 title' |safe}}</h1>
+            </div>
+            <div class="sec3-body row">                
+                <div class="activation-1 col-xs-5">
+                    <img src="static/image/part41.png">
+                    <img class="number" src="static/image/number1.png">
+                    <p> {{ fields|get_item:'Slide 4 item 1' |safe}}</p>
+                </div>
+                <div class="activation-2 col-xs-5">
+                    <img class="act-2-img" src="static/image/part42.png">
+                    <img class="number" src="static/image/number2.png">
+                    <p>{{ fields|get_item:'Slide 4 item 2' |safe}}</p>
+                </div>
+                <div class="activation-3 col-xs-5">
+                    <img src="static/image/part43.png">
+                    <img class="number" src="static/image/number3.png">
+                    <p> {{ fields|get_item:'Slide 4 item 3' |safe}}</p>
+                </div>
+                <div class="activation-4 col-xs-5">
+                    <img src="static/image/part44.png">
+                    <img class="number" src="static/image/number4.png">
+                    <p>{{ fields|get_item:'Slide 4 item 4' |safe}}</p>
+                </div>
+            </div>
+		</div>
+	</div>
+
+    <div class="section" id="section4">
+        <div class="sec4-head">
+            <h1> {{ fields|get_item:'Slide 5 title' |safe}} </h1>
+        </div>
+
+        <div class="wrapper">
+            <div class="sec4-body row">
+                <div class="limits col-xs-5 col-sm-4 col-md-3 col-lg-4">
+                    {{ fields|get_item:'Slide 5 item 1' |safe}}
+                </div>
+                <div class="sec4-bag col-sm-4 col-xs-5 col-md-3 col-lg-3">
+                    <img class="bag-img" src="/static/image/5slidebag.png">
+                </div>
+                <div class="periods col-xs-5 col-sm-4 col-md-3 col-lg-4">
+                    {{ fields|get_item:'Slide 5 item 2' |safe}}
+                    <img class="zlagoda" src="/static/image/zlagoda.png">
+                </div>
+                <div class="fransize col-xs-12">
+                    <h3> Франшиза 0%</h3>
+                </div>
+            </div>
+        </div>
+
+    </div> 
+
+    <div class="section" id="section5">
+        <div class="sec6-head">
+            <h1> {{ fields|get_item:'Slide 6 title' |safe}} </h1>
+        </div>
+        <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-offset-2">
+            <div id="map"></div>
+        </div>
+        <div id="salepoints" class="col-md-4 pull-right">
+            <ul>
+                <li>Аэропорт "Жуляны", г. Киев </li>
+                <li>Аэропорт г. Днепропетровск </li>
+                <li>Аэропорт г. Запорожье </li>
+            </ul>
+        </div>
+    </div>
+    <div class="section" id="section5">
+     <div class="wrapper raw">
+        <div class="contact-form col-xs-12 col-sm-5 col-md-5">
+            <h1> {{ fields|get_item:'Slide 7 item 1' |safe}}
+            </h1>
+             <form>
+                {% csrf_token %}
+                <input class="name" type="text"  placeholder="Ваше имя">
+                <input type="text" class="email" placeholder="Ваша почта">
+                <textarea class="message" type="text" name="text"placeholder="Ваше сообщение"></textarea>
+            </form>
+
+            <button class="btn-send"><span>Отправить</span></button>
+        </div>
+
+        <div class="contacts col-xs-12 col-sm-5 col-md-6">
+            {{ fields|get_item:'Slide 7 item 2' |safe}}
+
+         </div>
+    </div>
+         <div class="footer">
+            <a href="https://www.facebook.com/superbagua"><span class="flaticon-facebook29"></span></a>
+            <a href="https://instagram.com/superbag.ua/"><span class="flaticon-photos12"></span></a>
+         </div>
+    </div>
+</div>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68523702-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+{% endblock %}
